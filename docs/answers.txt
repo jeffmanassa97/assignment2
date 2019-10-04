@@ -1,0 +1,47 @@
+(a) Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 497 bytes | 497.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:jeffmanassa97/assignment2.git
+   2b8d987..de101ce  master -> master
+
+(b) How many commits have been done to the repository (not only by you, but by anyone) so far? 
+Answer: 9
+Command: git rev-list HEAD --count
+
+(c) When was the .gitignore file modified last?
+Answer:
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Wed Sep 25 18:13:30 2019 -0400
+Command: git log -1 .gitignore
+
+(d) Mention two reasons why branches are used in a Git repository 
+1. Version control - ability to revert back to a feature branch if the changes in master are unsatisfactory.
+2. Keeping a project in context (i.e. Feature, Develop, Release). This increases organization and streamlining the development process within a team.
+
+(e) What is the difference between git log and git status?
+git log shows you your past commits, but git status shows you the changes that need to be staged for a future commit and what files have been modified since last commit.
+
+(f) What command would you use to see the commits where “Vehicle.h” was one of the committed files? 
+Command: git log --follow -p Vehicle.h
+
+(g) What command would you use to see the commits whose commit message contains the word “file”?
+Command: git log --grep="file"
+
+(h) In the context of object-oriented programming (I) What is inheritance? (II) What is polymorphism? (III) What is encapsulation?
+I. Inheritance - an object aquires the properties of another object.
+II. Polymorphism - (Many forms) One method with multiple implementations, such as through function and operator overloading.
+III. Encapsulation - wrapping data and information in a single unit. Binding together the data and the functions that manipulate them.
+
+(i) What is the main difference between the “Dictator and Lieutenants” workflow and the “Integration manager” workflow? 
+Answer: “Dictator and Lieutenants” workflow has two layers of review, the lieutenants and dicator, but the “Integration manager” workflow has only on layer, the integration manager. This can decrease the problems, which are bound to occur. Less code problems will slip through the cracks. 
+
+(j) How would a team of 100 developers benefit from following the “Dictator and Lieutenants” workflow instead of the “Centralized” workflow? 
+ Answer: “Dictator and Lieutenants” workflow has two layers of review, the lieutenants and dicator, but the “Centralized” workflow has only on layer, the integration manager. This can decrease the problems, which are bound to occur. Less code problems will slip through the cracks, so less bugs will be a result. Also, conflicts might not appear on the local machine, but when merged with other's code may cause conflicts in logic or provide functionality that is unwanted. It is better to have a review stage, where an outside source reviews all developers code as a whole.
+
+
+
+
