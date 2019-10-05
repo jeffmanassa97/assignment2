@@ -43,5 +43,5 @@ Answer: “Dictator and Lieutenants” workflow has two layers of review, the li
  Answer: “Dictator and Lieutenants” workflow has two layers of review, the lieutenants and dicator, but the “Centralized” workflow has only on layer, the integration manager. This can decrease the problems, which are bound to occur. Less code problems will slip through the cracks, so less bugs will be a result. Also, conflicts might not appear on the local machine, but when merged with other's code may cause conflicts in logic or provide functionality that is unwanted. It is better to have a review stage, where an outside source reviews all developers code as a whole.
 
 
-
+5. Yes, the Driving simulator prototype using polymorphism and encapsulation. It is using encapsulation by using private methods only accessable to that class. It is using polymorphism by using explicit methods, so they can be instantiated with or without the parameter that is explicitly assigned. 
 
