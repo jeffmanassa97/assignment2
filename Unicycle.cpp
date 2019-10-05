@@ -1,11 +1,10 @@
 #include "Unicycle.h"
-#include <random>
 
 Unicycle::Unicycle(string brand, string model, int numOfRiders)
 {
     setBrand(brand);
     setModel(model);
-    setNumberOfRiders(numberOfRiders);
+    setNumberOfRiders(numOfRiders);
 }
 
 Unicycle::~Unicycle() = default;
@@ -22,15 +21,12 @@ void Unicycle::setNumberOfRiders(int numOfRiders)
 
 double Unicycle::mileageEstimate(double time)
 {
-    std::random_device rd;
-    std::default_random_engine generator(rd());
-    std::uniform_real_distribution<int> distribution(1, 3);
-    // Random because they are unreliable
-    double mileage = distribution(generator) * time;
+
+    double mileage = 3 * time;
 
     if (numberOfRiders > 1)
     {
-        mileage -= (numberOfRiders * 0.5);
+        mileage -= mileage * (numberOfRiders * 0.1);
     }
     if (mileage < 0)
         return 0;

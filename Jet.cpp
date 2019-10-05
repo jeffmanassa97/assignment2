@@ -1,12 +1,12 @@
 #include "Jet.h"
 #include <random>
 
-Jet::Jet(string brand, string model, string fueltype, int numberOfEngines)
+Jet::Jet(string brand, string model, string fueltype, int numOfEngines)
 {
     setBrand(brand);
     setModel(model);
     setFuelType(fuelType);
-    setNumberOfEngines(numberOfEngines);
+    setNumberOfEngines(numOfEngines);
 }
 
 Jet::~Jet() = default;
@@ -29,7 +29,7 @@ double Jet::mileageEstimate(double time)
     double mileage = distribution(generator) * time;
     if (fuelType == "Rocket")
     {
-        mileage += mileage * 0.055 * numberOfEngines;
+        mileage += (mileage * 0.055 * numberOfEngines);
     }
     return mileage;
 }
