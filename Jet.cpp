@@ -1,7 +1,3 @@
-//
-// Created by Esteban Parra on 9/5/19.
-//
-
 #include "Jet.h"
 #include <random>
 
@@ -28,7 +24,7 @@ void Jet::setNumberOfEngines(int numOfEngines)
 double Jet::mileageEstimate(double time)
 {
     std::random_device rd;
-    std::default_random_engine generator(rd()); // rd() provides a random seed
+    std::default_random_engine generator(rd());
     std::uniform_real_distribution<int> distribution(40, 100);
     double mileage = distribution(generator) * time;
     if (fuelType == "Rocket")
