@@ -1,13 +1,18 @@
 #include <iostream>
+#include <cmath>
 #include "Car.h"
 #include "Bicycle.h"
+#include "Jet.h"
+#include "Skateboard.h"
+#include "Unicycle.h"
 
 void printVehiclesRoster(Vehicle **vehicles, int size);
 
-int main() {
+int main()
+{
     std::cout << "Driving simulator" << std::endl;
-    int size = 6;
-    int capacity = 10;
+    int size = 11;
+    int capacity = 15;
     Vehicle **vehiclesArray = new Vehicle *[capacity];
 
     vehiclesArray[0] = new Car();
@@ -16,12 +21,20 @@ int main() {
     vehiclesArray[3] = new Car("Tesla", "T2", "electricity", "large");
     vehiclesArray[4] = new Bicycle("Mizuno", "Wave", 10);
     vehiclesArray[5] = new Car("BMW", "X5", "diesel", "grande");
+    vehiclesArray[6] = new Jet("Stealth", "USA", "Rocket");
+    vehiclesArray[7] = new Jet("Freighter", "Canadian", "electricity", 2);
+    vehiclesArray[8] = new Skateboard("GX5", "Shredder");
+    vehiclesArray[9] = new Skateboard("WF1000", "FlipInc");
+    vehiclesArray[10] = new Unicycle("Cyclops", "French");
+    vehiclesArray[11] = new Unicycle("UniTuni", "Burmes", 5);
 
-    printVehiclesRoster(vehiclesArray, size);
+    printVehiclesRoster(vehiclesArray, 12);
 
-    if (vehiclesArray != 0) { // If it is not a null pointer
+    if (vehiclesArray != 0)
+    { // If it is not a null pointer
         // do not use nullptr. It is not supported on linprog
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++)
+        {
             delete vehiclesArray[i];
         }
         delete[] vehiclesArray;
@@ -29,12 +42,14 @@ int main() {
     return 0;
 }
 
-void printVehiclesRoster(Vehicle **vehicles, int size) {
+void printVehiclesRoster(Vehicle **vehicles, int size)
+{
     double simulatedDistance = 130;
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++)
+    {
         cout << i << " " << vehicles[i]->toString() << endl;
         cout << "\tWould travel: "
-             << vehicles[i]->mileageEstimate(simulatedDistance) << " miles in "
+             << floor(vehicles[i]->mileageEstimate(simulatedDistance)) << " miles in "
              << simulatedDistance << " seconds" << endl;
     }
 }
